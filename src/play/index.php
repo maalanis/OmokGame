@@ -4,6 +4,14 @@ $strategy = array('Smart' => 'SmartStrategy', 'Random' => 'RandomStrategy');
 define("STRATEGIES", array('Smart' => 'SmartStrategy', 'Random' => 'RandomStrategy'));
 define("SIZE" , 10);
 
+$response = "response";
+$playerInfo = array("x" => $x, "y" => $y, "isWin" => false, "isDraw" => false, "row" => $winningRow);
+$opponentInfo = array("x" => $x, "y" => $y, "isWin" => false, "isDraw" => false, "row" => $winningRow);
+
+
+
+echo json_encode(array("response"=> true, "ack_move" => $playerInfo, "move" =>$opponentInfo));
+
 
 
 //$info = new GameInfo(SIZE, array_keys($strategy));
