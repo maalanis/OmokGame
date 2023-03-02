@@ -18,7 +18,7 @@ if (!array_key_exists(STRATEGY, $_GET)) { /* write code here */
 
 $strategy = $_GET[STRATEGY];
 
-if("Smart" == $strategy || "Random" == $strategy){
+if("Smart" === $strategy || "Random" === $strategy){
     $id = uniqid();
     addNote($id);
     echo (json_encode(array("reason" => true, `pid` => $id)));

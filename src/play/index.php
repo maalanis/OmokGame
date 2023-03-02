@@ -2,7 +2,7 @@
 include_once "RandomStrategy.php";
 $strategy = array('Smart' => 'SmartStrategy', 'Random' => 'RandomStrategy');
 define("STRATEGIES", array('Smart' => 'SmartStrategy', 'Random' => 'RandomStrategy'));
-define("SIZE" , 10);
+define("SIZE" , 15);
 
 $response = "response";
 $playerInfo = array("x" => $x, "y" => $y, "isWin" => false, "isDraw" => false, "row" => $winningRow);

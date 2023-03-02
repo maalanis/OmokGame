@@ -1,12 +1,12 @@
 <?php
 // torture.php - tortue an Omok web service by performing
-// various tests, esp. error handling. 
+// various tests, esp. error handling.
 // Requires PHP version 5.3.3 or higher
 
 // set to the base address (URL) of your Omok web service
 //$home = "https://cssrvlab01.utep.edu/classes/cs3360/<username>"
-//$home = "https://www.cs.utep.edu/cheon/cs3360/project/omok/";
-$home = "http://localhost:8629/";
+$home = "https://www.cs.utep.edu/cheon/cs3360/project/omok/";
+//$home = "http://localhost:8000/";
 
 $strategies = array(); // strategies supported by the web service under test
 $size = 15;  // size of the board
@@ -15,17 +15,14 @@ runTests();
 
 /** Test info: {"size":15,"strategies":["Smart","Random"]}. */
 function testInfo() {
-    echo "hello";
     global $strategies;
     global $size;
     $TAG = "I1";
     $response = visitInfo();
     //var_dump($response);
     if ($response) {
-        echo $response;
         $info = json_decode($response);
         if ($info != null) {
-            echo $info;
             $dim = property($info, 'size');
             assertTrue(isSet($dim) && $dim == $size, "$TAG-1");
             $strategies = property($info, 'strategies');
@@ -302,7 +299,7 @@ function createGame() {
     return property($json, 'pid');
 }
 
-function play($pid = null, $x = null, $y = null, $ok, $tag) {
+function play(  $pid = null, $x = null, $y = null, $ok, $tag) {
     $response = visitPlay($pid, $x, $y);
     checkPlayResponse($response, $ok, $tag);
 }
