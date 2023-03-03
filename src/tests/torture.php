@@ -299,7 +299,7 @@ function createGame() {
     return property($json, 'pid');
 }
 
-function play(  $pid = null, $x = null, $y = null, $ok, $tag) {
+function play($pid, $x, $y, $ok, $tag) {
     $response = visitPlay($pid, $x, $y);
     checkPlayResponse($response, $ok, $tag);
 }

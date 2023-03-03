@@ -21,7 +21,7 @@ $strategy = $_GET[STRATEGY];
 if("Smart" === $strategy || "Random" === $strategy){
     $id = uniqid();
     addNote($id);
-    echo (json_encode(array("reason" => true, `pid` => $id)));
+    echo (json_encode(array($response => true, "pid" => $id)));
 } else  echo json_encode(array($response => false, $reason=>"Unknown strategy"));
 
 function addNote($note) {
